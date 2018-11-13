@@ -15,15 +15,12 @@ export default class DishDetail extends Component {
     renderComments(array) {
 
         if (array != null) {
-            const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
-                "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
             const commentList = array.map(c => {
-                const date = new Date(c.date);
                 return (
                     <div key={c.id}>
                         <li className="mb-3">{c.comment}</li>
-                        <li className="mb-3">-- {c.author}, {monthNames[date.getMonth()]} {date.getDate()}, {date.getFullYear()}</li>
+                        <li className="mb-3">-- {c.author}, {new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day: '2-digit' }).format(new Date(Date.parse(c.date)))}</li>
                     </div>
                 );
             });
@@ -46,15 +43,17 @@ export default class DishDetail extends Component {
         const dish = this.props.dish;
         if (dish != null) {
             return (
-                <div className="row">
-                    <div className="col-12 col-md-5 m-1">
-                        <Card>
-                            <CardImg width="100%" src={dish.image} alt={dish.name} />
-                            {this.renderDish(dish)}
-                        </Card>
-                    </div>
-                    <div className="col-12 col-md-5 m-1">
-                        {this.renderComments(dish.comments)}
+                <div className="container">
+                    <div className="row">
+                        <div className="col-12 col-md-5 m-1">
+                            <Card>
+                                <CardImg width="100%" src={dish.image} alt={dish.name} />
+                                {this.renderDish(dish)}
+                            </Card>
+                        </div>
+                        <div className="col-12 col-md-5 m-1">
+                            {this.renderComments(dish.comments)}
+                        </div>
                     </div>
                 </div>
             );
