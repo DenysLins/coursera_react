@@ -14,25 +14,32 @@ export default class DishDetail extends Component {
 
     renderComments(array) {
 
-        const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
-            "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+        if (array != null) {
+            const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
+                "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
-        const commentList = array.map(c => {
-            const date = new Date(c.date);
+            const commentList = array.map(c => {
+                const date = new Date(c.date);
+                return (
+                    <div key={c.id}>
+                        <li className="mb-3">{c.comment}</li>
+                        <li className="mb-3">-- {c.author}, {monthNames[date.getMonth()]} {date.getDate()}, {date.getFullYear()}</li>
+                    </div>
+                );
+            });
+
             return (
-                <div key={c.id}>
-                    <li className="mb-3">{c.comment}</li>
-                    <li className="mb-3">-- {c.author}, {monthNames[date.getMonth()]} {date.getDate()}, {date.getFullYear()}</li>
+                <div className="list-unstyled">
+                    <h4>Comments</h4>
+                    {commentList}
                 </div>
             );
-        });
 
-        return (
-            <div className="list-unstyled">
-                <h4>Comments</h4>
-                {commentList}
-            </div>
-        );
+        } else {
+            return (
+                <div></div>
+            );
+        }
     }
 
     render() {
