@@ -31,7 +31,7 @@ const RenderComments = ({ comments }) => {
 
     } else {
         return (
-            <div></div>
+            <></>
         );
     }
 }
@@ -56,7 +56,7 @@ const DishDetail = (props) => {
         );
     } else {
         return (
-            <div></div>
+            <></>
         );
     }
 }
