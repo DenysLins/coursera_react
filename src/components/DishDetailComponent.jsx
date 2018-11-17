@@ -38,6 +38,7 @@ const RenderComments = ({ comments }) => {
 
 const DishDetail = (props) => {
     const dish = props.dish;
+    const comments = props.comments;
     if (dish != null) {
         return (
             <div className="container">
@@ -49,7 +50,7 @@ const DishDetail = (props) => {
                         </Card>
                     </div>
                     <div className="col-12 col-md-5 m-1">
-                        <RenderComments comments={dish.comments} />
+                        <RenderComments comments={comments.filter(comment => comment.dishId === dish.id)} />
                     </div>
                 </div>
             </div>

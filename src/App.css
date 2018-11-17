@@ -21,6 +21,7 @@
     margin: 0px auto;
     background: #9575CD;
     color: floralwhite;
+    border-radius: 0;
 }
 
 address {
@@ -31,4 +32,8 @@ address {
 
 .navbar-dark {
     background-color: #512DA8;
+}
+
+body {
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
 }
