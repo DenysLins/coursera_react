@@ -7,7 +7,7 @@ export default class Header extends Component {
         super(props);
         this.state = {
             isNavOpen: false
-        }
+        };
         this.toggleNav = this.toggleNav.bind(this);
     }
 
@@ -63,6 +63,6 @@ export default class Header extends Component {
                     </div>
                 </Jumbotron>
             </>
-        )
+        );
     }
 }
