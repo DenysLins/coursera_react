@@ -5,6 +5,7 @@ import Menu from './MenuComponent.jsx';
 import DishDetail from './DishDetailComponent.jsx';
 import Header from './HeaderComponent.jsx';
 import Footer from './FooterComponent.jsx';
+import About from './AboutComponent.jsx';
 import { DISHES } from '../shared/dishes.jsx';
 import { COMMENTS } from '../shared/comments.jsx';
 import { PROMOTIONS } from '../shared/promotions.jsx';
@@ -51,6 +52,7 @@ export default class Main extends Component {
                     <Route exact path="/menu" component={() => <Menu dishes={this.state.dishes} />} />
                     <Route path="/menu/:dishId" component={DishWithId} />
                     <Route exact path="/contactus" component={Contact} />
+                    <Route exact path="/aboutus" component={() => <About leaders={this.state.leaders} />} />
                     <Redirect to="/home" />
                 </Switch>
                 <Footer />
