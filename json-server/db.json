@@ -254,14 +254,14 @@
   ],
   "feedback": [
     {
-      "firstname": "fdas",
-      "lastname": "afds",
-      "telnum": "134113",
-      "email": "dafdads@daffas.dfdafd",
+      "firstName": "Denys",
+      "lastName": "Lins",
+      "telNum": "123456",
+      "email": "denyslins@gmail.com",
       "agree": true,
-      "contactType": "Email",
-      "message": "afadsfds",
-      "date": "2017-12-04T09:41:49.890Z",
+      "contactType": "Tel.",
+      "message": "Test",
+      "date": "2018-11-24T18:37:41.855Z",
       "id": 1
     }
   ]
