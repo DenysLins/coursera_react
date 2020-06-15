@@ -9,19 +9,19 @@ import { Leaders } from './leaders.jsx';
 import { InitialFeedback } from './forms.jsx';
 
 export const ConfigureStore = () => {
-    const store = createStore(
-        combineReducers({
-            dishes: Dishes,
-            comments: Comments,
-            promotions: Promotions,
-            leaders: Leaders,
-            ...createForms({
-                feedback: InitialFeedback
-            })
-        }),
-        applyMiddleware(thunk, logger)
-    );
+  const store = createStore(
+    combineReducers({
+      dishes: Dishes,
+      comments: Comments,
+      promotions: Promotions,
+      leaders: Leaders,
+      ...createForms({
+        feedback: InitialFeedback
+      })
+    }),
+    applyMiddleware(thunk, logger)
+  );
 
-    return store;
+  return store;
 
 };

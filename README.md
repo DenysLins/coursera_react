@@ -2,6 +2,20 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Initial steps
+
+### Download dependencies
+
+Run the following command in the project directory and in the server directory:<br>
+
+`yarn`
+
+### Run backend dev server
+
+Run the following command in the server directory:
+
+`npm start`
+
 ## Available Scripts
 
 In the project directory, you can run:
